@@ -1,9 +1,9 @@
 <div>
   <ul>
     @for (ticket of tickets; track ticket.id) {
-      <li>
-        <app-ticket />
-      </li>
+      
+        <app-ticket [data]="ticket" (close)="onClose(ticket.id)"/>
+      
     } @empty {
       <li>No tickets available.</li>
     }
